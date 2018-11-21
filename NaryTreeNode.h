@@ -5,7 +5,7 @@
 #ifndef ASDA_BASIC_TREES_NARYTREENODE_H
 #define ASDA_BASIC_TREES_NARYTREENODE_H
 
-#include <list>
+#include <vector>
 
 template<typename T>
 class NaryTreeNode
@@ -13,7 +13,7 @@ class NaryTreeNode
 private:
     NaryTreeNode* mParent;
     T mData;
-    std::list<NaryTreeNode*>* mChildrenList;
+    std::vector<NaryTreeNode*>* mChildrenList;
     int N;
 
 public:
@@ -25,7 +25,7 @@ public:
 
     NaryTreeNode* getChild(int index);
 
-    std::list<NaryTreeNode<T>*>* getChildren();
+    std::vector<NaryTreeNode<T>*>* getChildren();
 
     void print();
 

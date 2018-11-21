@@ -4,6 +4,7 @@
 
 #include "NaryTreeNode.h"
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -12,7 +13,7 @@ NaryTreeNode<T>::NaryTreeNode(T data, int n)
 {
     this->N = n;
     this->mParent = NULL;
-    this->mChildrenList = &new list<NaryTreeNode<T>*>(this->N);
+    this->mChildrenList = new vector<NaryTreeNode<T>*>(this->N);
     this->mData = data;
 }
 
@@ -22,15 +23,15 @@ NaryTreeNode<T>* NaryTreeNode<T>::getChild(int index)
     NaryTreeNode<T>* out = NULL;
     if (index < this->N)
     {
-        out = this->mChildrenList[index];
+        out = mChildrenList->at(index);
     }
     return out;
 }
 
 template<typename T>
-list<NaryTreeNode<T>*>* NaryTreeNode<T>::getChildren()
+vector<NaryTreeNode<T>*>* NaryTreeNode<T>::getChildren()
 {
-    return &new list<NaryTreeNode<T>*>(mChildrenList);
+    return new vector<NaryTreeNode<T>*>(mChildrenList);
 }
 
 template<typename T>
@@ -57,9 +58,9 @@ void NaryTreeNode<T>::print(unsigned int depth)
     }
     cout << mData << endl;
 
-    for (typename list<NaryTreeNode*>::iterator it = mChildrenList->begin(); it != mChildrenList->end(); it++)
+    for (unsigned i = 0; i < mChildrenList->size(); i++)
     {
-        *it->print(depth + 1);
+        mChildrenList->at(i)->print(depth + 1);
     }
 }
 
@@ -68,3 +69,6 @@ void NaryTreeNode<T>::print()
 {
     this->print(0);
 }
+
+template
+class NaryTreeNode<int>;
