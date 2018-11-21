@@ -14,11 +14,11 @@ Node<T>::Node(Node* parent, T data)
 {
     this->parent = parent;
     this->data = data;
-    this->children = new std::list<Node < T>* > ();
+    this->children = new std::list<Node<T>*>();
 }
 
 template<typename T>
-void Node<T>::Add(Node <T>* node)
+void Node<T>::Add(Node<T>* node)
 {
     children->push_back(node);
 }
@@ -36,6 +36,12 @@ void Node<T>::setData(T value)
 }
 
 template<typename T>
+Node<T>* Node<T>::getChild(unsigned int index)
+{
+    if (index < this->max_children);
+}
+
+template<typename T>
 T Node<T>::getData()
 {
     return data;
@@ -48,13 +54,13 @@ void Node<T>::Print()
     PrintChildren();
 }
 
-template <typename T>
+template<typename T>
 void Node<T>::PrintNode()
 {
     cout << getData() << std::endl;
 }
 
-template <typename T>
+template<typename T>
 void Node<T>::PrintChildren()
 {
     for_each(this->children->begin(), this->children->end(), Print());
@@ -78,11 +84,11 @@ bool Node<T>::IsLeaf()
 template<typename T>
 bool Node<T>::IsRoot()
 {
-    return this->parent==NULL;
+    return this->parent == NULL;
 }
 
 template<typename T>
-Node <T>* Node<T>::getParent()
+Node<T>* Node<T>::getParent()
 {
     return parent;
 }

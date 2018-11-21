@@ -16,11 +16,11 @@ class NAryTree
     //attributes
 private:
     Node<T>* root;
-    int max_children;
 public:
     //Constructor
     NAryTree();
-    NAryTree(int max_children);
+
+    explicit NAryTree(int max_children);
 
     //Methods
     void Print();

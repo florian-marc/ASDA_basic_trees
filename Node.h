@@ -16,6 +16,7 @@ private:
     T data;
     Node* parent;
     std::list<Node*>* children;
+    int max_children;
 
 public:
 
@@ -37,6 +38,8 @@ public:
     bool IsRoot();
 
     Node<T>* getParent();
+
+    Node<T>* getChild(unsigned int index);
 
     //Print
 public:

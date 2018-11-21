@@ -10,7 +10,15 @@
 template<typename T>
 class BinaryTree : public NAryTree<T>
 {
+public:
     BinaryTree<T>();
+
+    ~BinaryTree();
+
+    void insert(T data);
+
+    Node<T>* search(T data);
+
 };
 
 

@@ -8,6 +8,3 @@
 template<typename T>
 BinaryTree<T>::BinaryTree():NAryTree<T>(2)
 { }
-
-template <typename T>
-BinaryTree::

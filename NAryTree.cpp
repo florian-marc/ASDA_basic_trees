@@ -2,7 +2,7 @@
 // Created by flori on 18/10/2018.
 //
 
-#include <stdlib.h>
+#include <cstdlib>
 #include <algorithm>
 #include "NAryTree.h"
 
@@ -12,7 +12,6 @@ template<typename T>
 NAryTree<T>::NAryTree()
 {
     this->root = NULL;
-    this->max_children = -1;
 }
 
 template<typename T>
@@ -27,14 +26,14 @@ void NAryTree<T>::Add(T data, vector<unsigned int> path)
     _Add(data, path, 0);
 }
 
-template<typename T>
+/*template<typename T>
 void NAryTree<T>::_Add(T data, vector<unsigned int> path, unsigned int index)
 {
     if (IsPathCorrect(path))
     {
 
     }
-}
+}*/
 
 template<typename T>
 bool NAryTree<T>::IsPathCorrect(vector<unsigned int> path)
